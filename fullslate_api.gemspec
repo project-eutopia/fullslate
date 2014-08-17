@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = FullslateApi::VERSION
   spec.authors       = ["Christopher Locke"]
   spec.email         = ["clocke@degica.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{This gem is used to access the server API for Full Slate}
+  spec.summary       = %q{This gem provides the ability to access the Full Slate API by providing methods to handle the server calls, and defines models which are used to wrap up the raw JSON data that is returned by Full Slate.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
