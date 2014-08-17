@@ -1,3 +1,5 @@
+require 'httparty'
+
 module Fullslate
   class << self
     def configuration
@@ -34,6 +36,7 @@ module Fullslate
   end
 end
 
+require 'fullslate/api'
 require 'fullslate/version'
 require 'fullslate/configuration'
 require 'fullslate/employee'

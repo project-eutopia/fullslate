@@ -3,7 +3,7 @@ module Fullslate
   class Employee
     include HTTParty
 
-    base_uri FullslateApi.api_uri
+    base_uri Fullslate.api_uri
 
     def initialize()
       #@id = id
