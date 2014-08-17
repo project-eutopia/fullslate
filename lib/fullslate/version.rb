@@ -1,3 +1,3 @@
-module FullslateApi
+module Fullslate
   VERSION = "0.0.1"
 end

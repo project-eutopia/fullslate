@@ -1,4 +1,4 @@
-# FullslateApi
+# Fullslate
 
 TODO: Write a gem description
 
@@ -6,7 +6,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'fullslate_api'
+    gem 'fullslate'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install fullslate_api
+    $ gem install fullslate
 
 ## Usage
 

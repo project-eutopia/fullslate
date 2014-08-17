@@ -1,13 +1,13 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'fullslate_api/version'
+require 'fullslate/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "fullslate_api"
-  spec.version       = FullslateApi::VERSION
+  spec.name          = "fullslate"
+  spec.version       = Fullslate::VERSION
   spec.authors       = ["Christopher Locke"]
-  spec.email         = ["clocke@degica.com"]
+  spec.email         = ["chris@tokyoacademics.com"]
   spec.description   = %q{This gem is used to access the server API for Full Slate}
   spec.summary       = %q{This gem provides the ability to access the Full Slate API by providing methods to handle the server calls, and defines models which are used to wrap up the raw JSON data that is returned by Full Slate.}
   spec.homepage      = ""
