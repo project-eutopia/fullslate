@@ -1,5 +1,10 @@
-require "fullslate_api/version"
+require 'fullslate_api/version'
+require 'yaml'
 
 module FullslateApi
-  # Your code goes here...
+  attr_reader :config
+
+  @config = YAML::load(File.read(File.join(ENV['HOME'], '.fullslate')))
 end
+
+require 'fullslate_api/employee'
