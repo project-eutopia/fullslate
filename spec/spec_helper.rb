@@ -2,6 +2,7 @@ require 'bundler/setup'
 
 require 'pry'
 require 'httparty'
+require 'webmock/rspec'
 
 Bundler.setup
 

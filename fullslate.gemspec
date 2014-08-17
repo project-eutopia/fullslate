@@ -26,4 +26,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "factory_girl", "~> 4.4"
   spec.add_development_dependency "pry", "~> 0.10"
+  spec.add_development_dependency "webmock", "~> 1.18"
 end

@@ -1,18 +1,12 @@
 module Fullslate
 
   class Employee
-    include HTTParty
+    attr_accessor :id, :first_name, :last_name
 
-    base_uri Fullslate.api_uri
-
-    def initialize()
-      #@id = id
-    end
-
-    def user
-      g = self.class.get("/employees", Fullslate.url_params)
-      binding.pry
-      g
+    def initialize(params)
+      @id = params["id"]
+      @first_name = params["first_name"]
+      @last_name = params["last_name"]
     end
   end
 
