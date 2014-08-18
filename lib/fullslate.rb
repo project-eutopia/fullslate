@@ -38,6 +38,7 @@ end
 
 require 'fullslate/api'
 require 'fullslate/version'
+require 'fullslate/errors'
 require 'fullslate/configuration'
 require 'fullslate/client'
 require 'fullslate/employee'

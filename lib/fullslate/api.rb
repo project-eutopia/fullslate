@@ -17,6 +17,11 @@ module Fullslate
         employees_array
       end
 
+      def employee(id)
+        json = get("/employees/#{id}", query: Fullslate.url_params)
+        Fullslate::Employee.new(json)
+      end
+
       def services
         services_array = Array.new
 
