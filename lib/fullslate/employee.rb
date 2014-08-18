@@ -1,7 +1,7 @@
 module Fullslate
 
   class Employee
-    attr_accessor :id, :first_name, :last_name
+    attr_reader :id, :first_name, :last_name
 
     def initialize(params)
       @id = params["id"]

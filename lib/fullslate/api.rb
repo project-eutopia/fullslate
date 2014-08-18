@@ -7,10 +7,13 @@ module Fullslate
         base_uri Fullslate.api_uri
       end
 
-      def employees
+      def employees(opts = nil)
         employees_array = Array.new
 
-        get('/employees', query: Fullslate.url_params).each do |employee_json|
+        res = get('/employees', query: Fullslate.url_params)
+        return res if opts and opts[:raw]
+
+        res.each do |employee_json|
           employees_array << Fullslate::Employee.new(employee_json)
         end
 
@@ -22,11 +25,14 @@ module Fullslate
         Fullslate::Employee.new(json)
       end
 
-      def services
+      def services(opts = nil)
         services_array = Array.new
 
-        get('/services', query: Fullslate.url_params).each do |services_json|
-          services_array << Fullslate::Service.new(services_json)
+        res = get('/services', query: Fullslate.url_params)
+        return res if opts and opts[:raw]
+
+        res.each do |service_json|
+          services_array << Fullslate::Service.new(service_json)
         end
 
         services_array
@@ -38,14 +44,16 @@ module Fullslate
       end
 
       def clients(opts = nil)
-        params = Fullslate.url_params.merge!( { include: 'emails,phone_numbers,addresses,links' } )
+        params = Fullslate.url_params.merge!(
+          { include: 'emails,phone_numbers,addresses,links' }
+        )
         clients_array = Array.new
 
         res = get('/clients', query: params)
         return res if opts and opts[:raw]
 
-        res.each do |clients_json|
-          clients_array << Fullslate::Client.new(clients_json)
+        res.each do |client_json|
+          clients_array << Fullslate::Client.new(client_json)
         end
 
         clients_array
@@ -54,6 +62,21 @@ module Fullslate
       def client(id)
         json = get("/clients/#{id}", query: Fullslate.url_params)
         Fullslate::Client.new(json)
+      end
+
+      def events(opts = nil)
+        events_array = Array.new
+
+        res = get('/events', query: Fullslate.url_params)
+        return res if opts and opts[:raw]
+
+        return res
+
+        res.each do |event_json|
+          events_array << Fullslate::Event.new(event_json)
+        end
+
+        events_array
       end
 
     end

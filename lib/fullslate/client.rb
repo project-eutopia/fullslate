@@ -1,12 +1,13 @@
 module Fullslate
 
   class Client
-    attr_accessor :id, :first_name, :last_name, :emails, :phone_numbers, :active
+    attr_reader :id, :first_name, :last_name, :notes, :emails, :phone_numbers, :addresses, :active
 
     def initialize(params)
       @id = params["id"]
       @first_name = params["first_name"]
       @last_name = params["last_name"]
+      @notes = params["notes"]
 
       if params["emails"]
         @emails = params["emails"].map do |email_obj|
@@ -22,6 +23,14 @@ module Fullslate
         end
       else
         @phone_numbers = Array.new
+      end
+
+      if params["addresses"]
+        @addresses = params["addresses"].map do |address_obj|
+          address_obj["number"]
+        end
+      else
+        @addresses = Array.new
       end
 
       @active = (params["active"] == true)
