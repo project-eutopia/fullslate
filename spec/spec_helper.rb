@@ -2,7 +2,9 @@ require 'bundler/setup'
 
 require 'pry'
 require 'httparty'
+
 require 'webmock/rspec'
+WebMock.disable_net_connect!(allow_localhost: true)
 
 Bundler.setup
 
@@ -26,11 +28,17 @@ RSpec.configure do |config|
   config.order = 'random'
 
   config.before(:each) do
-    Fullslate.configure do |config|
-      config.key = "fakecompany"
-      config.token = "fakecompany"
-      config.auth_key = "ABCxyz123456"
+    Fullslate.configure do |fullslate_config|
+      fullslate_config.key = "fakecompany"
+      fullslate_config.token = "fakecompany"
+      fullslate_config.auth_key = "ABCxyz123456"
     end
+  end
+
+  config.before(:each) do
+    stub_request(:get, /api.github.com/).
+      with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
+      to_return(status: 200, body: "stubbed response", headers: {})
   end
 end
 

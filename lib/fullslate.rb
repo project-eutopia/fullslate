@@ -27,11 +27,11 @@ module Fullslate
     end
 
     def api_uri
-      "https://#{token}.fullslate.com/api"
+      "https://#{key}.fullslate.com/api"
     end
 
     def url_params
-      { auth: auth_key, token: token }
+      { auth: auth_key, app: token }
     end
   end
 end
@@ -39,5 +39,7 @@ end
 require 'fullslate/api'
 require 'fullslate/version'
 require 'fullslate/configuration'
+require 'fullslate/client'
 require 'fullslate/employee'
+require 'fullslate/service'
 

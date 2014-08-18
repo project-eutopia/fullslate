@@ -4,15 +4,14 @@ describe Fullslate::Employee do
   it "should pass" do
     expect(true).to be true
   end
+end
 
-  context "get" do
-    stub_request(:get, "http://fakecompany.fullslate.com/api/employees").with(
-      body: "hi"
-    )
+describe 'External request' do
+  it 'queries FactoryGirl contributors on Github' do
+    uri = URI('https://api.github.com/repos/thoughtbot/factory_girl/contributors')
 
-    it "should get" do
-      Net::HTTP.get("http://fakecompany.fullslate.com/api/employees")
-    end
+    response = Net::HTTP.get(uri)
+
+    expect(response).to be_an_instance_of(String)
   end
-
 end

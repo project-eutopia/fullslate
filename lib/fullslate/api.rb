@@ -10,7 +10,7 @@ module Fullslate
       def employees
         employees_array = Array.new
 
-        get('/employees').each do |employee_json|
+        get('/employees', query: Fullslate.url_params).each do |employee_json|
           employees_array << Fullslate::Employee.new(employee_json)
         end
 
@@ -20,15 +20,25 @@ module Fullslate
       def services
         services_array = Array.new
 
-        get('/services').each do |services_json|
+        get('/services', query: Fullslate.url_params).each do |services_json|
           services_array << Fullslate::Service.new(services_json)
         end
 
         services_array
       end
 
-    end
+      def clients
+        params = Fullslate.url_params.merge!( { include: 'emails,phone_numbers,addresses,links' } )
+        clients_array = Array.new
 
+        get('/clients', query: params).each do |clients_json|
+          clients_array << Fullslate::Client.new(clients_json)
+        end
+
+        clients_array
+      end
+
+    end
   end
 end
 
