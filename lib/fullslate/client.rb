@@ -9,7 +9,7 @@ module Fullslate
       @last_name = params["last_name"]
 
       if params["emails"]
-        @emails = params["emails"].each do |email_obj|
+        @emails = params["emails"].map do |email_obj|
           email_obj["address"]
         end
       else
@@ -17,7 +17,7 @@ module Fullslate
       end
 
       if params["phone_numbers"]
-        @phone_numbers = params["phone_numbers"].each do |phone_number_obj|
+        @phone_numbers = params["phone_numbers"].map do |phone_number_obj|
           phone_number_obj["phone_numbers"]
         end
       else
