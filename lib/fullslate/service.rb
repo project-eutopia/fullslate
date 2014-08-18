@@ -8,6 +8,10 @@ module Fullslate
       @name = params["name"]
       @price = params["price"]
       @time = params["time"]
+
+      if @id.nil?
+        raise Fullslate::ServiceNotFound
+      end
     end
   end
 

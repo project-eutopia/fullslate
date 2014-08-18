@@ -2,6 +2,9 @@ require 'sinatra/base'
 
 class FakeFullslate < Sinatra::Base
 
+  #
+  # Fullslate::Employee API calls
+  #
   get '/api/employees' do
     json_response 200, 'employees.json'
   end
@@ -14,6 +17,40 @@ class FakeFullslate < Sinatra::Base
     end
 
     employee.to_json
+  end
+
+  #
+  # Fullslate::Service API calls
+  #
+  get '/api/services' do
+    json_response 200, 'services.json'
+  end
+
+  get '/api/services/:id' do
+    json = json_response 200, 'services.json'
+
+    service = JSON.parse(json).find do |services_json|
+      services_json["id"] == params[:id].to_i
+    end
+
+    service.to_json
+  end
+
+  #
+  # Fullslate::Client API calls
+  #
+  get '/api/clients' do
+    json_response 200, 'clients.json'
+  end
+
+  get '/api/clients/:id' do
+    json = json_response 200, 'clients.json'
+
+    client = JSON.parse(json).find do |clients_json|
+      clients_json["id"] == params[:id].to_i
+    end
+
+    client.to_json
   end
 
   private

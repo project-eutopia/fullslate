@@ -32,15 +32,28 @@ module Fullslate
         services_array
       end
 
-      def clients
+      def service(id)
+        json = get("/services/#{id}", query: Fullslate.url_params)
+        Fullslate::Service.new(json)
+      end
+
+      def clients(opts = nil)
         params = Fullslate.url_params.merge!( { include: 'emails,phone_numbers,addresses,links' } )
         clients_array = Array.new
 
-        get('/clients', query: params).each do |clients_json|
+        res = get('/clients', query: params)
+        return res if opts and opts[:raw]
+
+        res.each do |clients_json|
           clients_array << Fullslate::Client.new(clients_json)
         end
 
         clients_array
+      end
+
+      def client(id)
+        json = get("/clients/#{id}", query: Fullslate.url_params)
+        Fullslate::Client.new(json)
       end
 
     end

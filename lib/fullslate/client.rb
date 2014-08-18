@@ -1,7 +1,7 @@
 module Fullslate
 
   class Client
-    attr_accessor :id, :first_name, :last_name, :emails, :phone_numbers
+    attr_accessor :id, :first_name, :last_name, :emails, :phone_numbers, :active
 
     def initialize(params)
       @id = params["id"]
@@ -18,13 +18,17 @@ module Fullslate
 
       if params["phone_numbers"]
         @phone_numbers = params["phone_numbers"].map do |phone_number_obj|
-          phone_number_obj["phone_numbers"]
+          phone_number_obj["number"]
         end
       else
         @phone_numbers = Array.new
       end
 
       @active = (params["active"] == true)
+
+      if @id.nil?
+        raise Fullslate::ClientNotFound
+      end
     end
   end
 

@@ -1,0 +1,94 @@
+[
+  {
+    "id": 1,
+    "name": "Diagnostics / Consultation",
+    "price": 0.0,
+    "time": 3600,
+    "description": null,
+    "employees": [
+      {
+        "id": 2,
+        "name": "Neil Nguyen"
+      },
+      {
+        "id": 55,
+        "name": "Chris Locke"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "SAT/ACT Tutoring Group 2 - 1.5hr",
+    "price": 12000.0,
+    "time": 5400,
+    "description": null,
+    "employees": [
+      {
+        "id": 2,
+        "name": "Neil Nguyen"
+      },
+      {
+        "id": 55,
+        "name": "Chris Locke"
+      }
+    ]
+  },
+  {
+    "id": 257,
+    "name": "Skype Practice Monthly Charge",
+    "price": 10000.0,
+    "time": null,
+    "description": null,
+    "employees": [
+      {
+        "id": 2,
+        "name": "Neil Nguyen"
+      },
+      {
+        "id": 55,
+        "name": "Chris Locke"
+      }
+    ]
+  },
+  {
+    "id": 276,
+    "name": "College Essay Consulting - 3 pack",
+    "price": null,
+    "time": null,
+    "description": null,
+    "employees": [
+      {
+        "id": 2,
+        "name": "Neil Nguyen"
+      },
+      {
+        "id": 55,
+        "name": "Chris Locke"
+      },
+      {
+        "id": 56,
+        "name": "Eugene Kim"
+      },
+      {
+        "id": 108,
+        "name": "Ryo Takahashi"
+      },
+      {
+        "id": 141,
+        "name": "Vincent Elfving"
+      },
+      {
+        "id": 149,
+        "name": "Yasmine Karami"
+      },
+      {
+        "id": 178,
+        "name": "Steve Kilty"
+      },
+      {
+        "id": 238,
+        "name": "Michael Pearce"
+      }
+    ]
+  }
+]
