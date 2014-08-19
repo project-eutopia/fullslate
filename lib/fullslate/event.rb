@@ -1,6 +1,7 @@
 module Fullslate
 
   class Event
+    API_PATH = '/events'
     attr_reader :id,
                 :employee,
                 :type,

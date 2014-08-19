@@ -1,6 +1,7 @@
 module Fullslate
 
   class Service
+    API_PATH = '/services'
     attr_reader :id, :name, :price, :time, :description
 
     def initialize(params)

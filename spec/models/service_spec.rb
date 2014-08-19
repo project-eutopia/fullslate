@@ -17,6 +17,14 @@ describe Fullslate::Api do
     end
   end
 
+  describe '#services(ids: [...])' do
+    subject(:services) { Fullslate::Api.services(ids: [4,257]) }
+
+    it 'should have 2' do
+      expect(services.size).to eq 2
+    end
+  end
+
   describe '#service(:id)' do
     let(:service) { Fullslate::Api.service(service_id) }
 

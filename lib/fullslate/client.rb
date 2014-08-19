@@ -1,6 +1,7 @@
 module Fullslate
 
   class Client
+    API_PATH = '/clients'
     attr_reader :id, :first_name, :last_name, :notes, :emails, :phone_numbers, :addresses, :active
 
     def initialize(params)

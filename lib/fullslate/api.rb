@@ -7,78 +7,82 @@ module Fullslate
         base_uri Fullslate.api_uri
       end
 
-      def employees(opts = nil)
-        employees_array = Array.new
-
-        res = get('/employees', query: Fullslate.url_params)
-        return res if opts and opts[:raw]
-
-        res.each do |employee_json|
-          employees_array << Fullslate::Employee.new(employee_json)
-        end
-
-        employees_array
+      # opts[:raw] = true => returns raw json string
+      # opts[:query] = hash of query string parameters to add to url
+      # opts[:ids] = array of ids to get in the call
+      def employees(opts = {})
+        fullslate_objects(Fullslate::Employee, opts)
       end
 
       def employee(id)
-        json = get("/employees/#{id}", query: Fullslate.url_params)
-        Fullslate::Employee.new(json)
+        fullslate_object(id, Fullslate::Employee)
       end
 
-      def services(opts = nil)
-        services_array = Array.new
-
-        res = get('/services', query: Fullslate.url_params)
-        return res if opts and opts[:raw]
-
-        res.each do |service_json|
-          services_array << Fullslate::Service.new(service_json)
-        end
-
-        services_array
+      def services(opts = {})
+        fullslate_objects(Fullslate::Service, opts)
       end
 
       def service(id)
-        json = get("/services/#{id}", query: Fullslate.url_params)
-        Fullslate::Service.new(json)
+        fullslate_object(id, Fullslate::Service)
       end
 
-      def clients(opts = nil)
-        params = Fullslate.url_params.merge!(
+      def clients(opts = {})
+        opts[:query] = Hash.new unless opts[:query]
+        # Always include extra data about clients by default
+        opts[:query].merge!(
           { include: 'emails,phone_numbers,addresses,links' }
         )
-        clients_array = Array.new
-
-        res = get('/clients', query: params)
-        return res if opts and opts[:raw]
-
-        res.each do |client_json|
-          clients_array << Fullslate::Client.new(client_json)
-        end
-
-        clients_array
+        fullslate_objects(Fullslate::Client, opts)
       end
 
       def client(id)
-        json = get("/clients/#{id}", query: Fullslate.url_params)
-        Fullslate::Client.new(json)
+        fullslate_object(id, Fullslate::Client)
       end
 
-      def events(opts = nil)
-        events_array = Array.new
+      def events(opts = {})
+        fullslate_objects(Fullslate::Event, opts)
+      end
 
-        res = get('/events', query: Fullslate.url_params)
-        return res if opts and opts[:raw]
+      def event(id)
+        fullslate_object(id, Fullslate::Event)
+      end
 
-#        return res
+      private
 
-        res.each do |event_json|
-          events_array << Fullslate::Event.new(event_json)
+      def fullslate_objects(object_class, opts = {})
+        array = Array.new
+
+        res = get(object_class::API_PATH, query: query_from_opts(opts))
+        return res if opts[:raw]
+
+        res.each do |json|
+          array << object_class.new(json)
         end
 
-        events_array
+        if opts[:ids]
+          new_array = Array.new
+          array.each do |obj|
+            new_array << obj if opts[:ids].include? obj.id
+          end
+
+          return new_array
+        end
+
+        array
       end
 
+      def fullslate_object(id, object_class, opts = {})
+        json = get("#{object_class::API_PATH}/#{id}", query: query_from_opts(opts))
+        object_class.new(json)
+      end
+
+      def query_from_opts(opts)
+        if opts[:query]
+          Fullslate.url_params.merge(opts[:query])
+        else
+          Fullslate.url_params
+        end
+      end
     end
   end
 end

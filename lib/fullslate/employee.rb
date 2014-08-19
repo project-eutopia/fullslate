@@ -1,6 +1,7 @@
 module Fullslate
 
   class Employee
+    API_PATH = '/employees'
     attr_reader :id, :first_name, :last_name
 
     def initialize(params)
