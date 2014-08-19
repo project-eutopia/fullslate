@@ -53,6 +53,23 @@ class FakeFullslate < Sinatra::Base
     client.to_json
   end
 
+  #
+  # Fullslate::Event API calls
+  #
+  get '/api/events' do
+    json_response 200, 'events.json'
+  end
+
+  get '/api/events/:id' do
+    json = json_response 200, 'events.json'
+
+    event = JSON.parse(json).find do |events_json|
+      events_json["id"] == params[:id].to_i
+    end
+
+    event.to_json
+  end
+
   private
 
   def json_response(response_code, file_name)

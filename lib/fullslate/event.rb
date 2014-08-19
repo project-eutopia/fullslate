@@ -29,6 +29,7 @@ module Fullslate
 
     def initialize(params)
       @id = params["id"]
+      @employee = params["employee"]
 
       if @id.nil?
         raise Fullslate::ClientNotFound

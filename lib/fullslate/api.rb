@@ -70,7 +70,7 @@ module Fullslate
         res = get('/events', query: Fullslate.url_params)
         return res if opts and opts[:raw]
 
-        return res
+#        return res
 
         res.each do |event_json|
           events_array << Fullslate::Event.new(event_json)
