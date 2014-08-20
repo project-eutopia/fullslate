@@ -25,7 +25,7 @@ class FakeFullslate < Sinatra::Base
     json = json_response 200, "#{name}.json"
 
     obj = JSON.parse(json).find do |cur_json|
-      cur_json["id"] == params[:id].to_i
+      cur_json["id"].to_s == params[:id].to_s
     end
 
     obj.to_json

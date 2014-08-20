@@ -6,15 +6,233 @@
   "to": "2014-08-17T11:00:00+0900",
   "global_id": "sQ24P8ObS3ZSfEsTgBVqlqiMF0@fullslate.com",
   "global_sequence": 0,
-  "attendees": 
+  "attendees":
    [{"id": 114, "name": "Person One"},
     {"id": 168, "name": "Person Two"},
     {"id": 306, "name": "Person Three"}],
   "services": [{"id": 206, "name": "SAT Math - Real Problem Solving"}],
   "recurs": true,
-  "recurrence": 
+  "recurrence":
    "DTSTART;TZID=Asia/Tokyo;VALUE=DATE-TIME:20140817T090000\nDTEND;TZID=Asia/Tokyo;VALUE=DATE-TIME:20140817T110000\n\nRRULE:FREQ=WEEKLY",
   "created_at": "2014-08-17T11:26:08+0900",
   "created_by": "chris@tokyoacademics.com",
-  "maximum_attendees": 10}
+  "maximum_attendees": 10
+},
+{
+    "id": "EP7WajbtLi",
+    "employee": {
+        "id": 178,
+        "name": "Steven Name"
+    },
+    "type": "appointment",
+    "at": "2014-08-15T10:30:00+0900",
+    "to": "2014-08-15T12:00:00+0900",
+    "global_id": "yxIlU6VdQ3dwoTxzRYpOWQHuQq@fullslate.com",
+    "global_sequence": 1,
+    "attendees": [
+        {
+            "id": 296,
+            "name": "Fake Person"
+        }
+    ],
+    "services": [
+        {
+            "id": 13,
+            "name": "High School Tutoring - 1.5hr"
+        }
+    ],
+    "created_at": "2014-08-07T18:22:57+0900",
+    "created_by": "abc@email.com",
+    "updated_at": "2014-08-15T17:09:51+0900",
+    "updated_by": "info@tokyoacademics.com",
+    "provider_notes": "Notes"
+},
+{
+    "id": "9uI0bDQQF4",
+    "employee": {
+        "id": 178,
+        "name": "Steven Name"
+    },
+    "type": "appointment",
+    "at": "2014-08-15T12:00:00+0900",
+    "to": "2014-08-15T13:00:00+0900",
+    "global_id": "GDGZ88Z4afYs7KcvDZ3dDPXBSg@fullslate.com",
+    "global_sequence": 1,
+    "attendees": [
+        {
+            "id": 237,
+            "name": "Another Person"
+        }
+    ],
+    "services": [
+        {
+            "id": 12,
+            "name": "High School Tutoring - 1hr"
+        }
+    ],
+    "created_at": "2014-08-15T13:20:06+0900",
+    "created_by": "abc@email.com",
+    "updated_at": "2014-08-15T17:14:26+0900",
+    "updated_by": "info@tokyoacademics.com",
+    "provider_notes": "Heh, notes"
+},
+{
+    "id": "xz1Xju0yoG",
+    "employee": {
+        "id": 178,
+        "name": "Steven Name"
+    },
+    "type": "personal",
+    "at": "2014-06-05T08:00:00+0900",
+    "to": "2014-06-05T17:00:00+0900",
+    "global_id": "eXHBHZdJZ4feIKj8YmTSJOoiSP@fullslate.com",
+    "global_sequence": 8,
+    "recurs": true,
+    "recurrence": "DTSTART;TZID=Asia/Tokyo;VALUE=DATE-TIME:20140605T080000\nDTEND;TZID=Asia/Tokyo;VALUE=DATE-TIME:20140605T170000\n\nRRULE:FREQ=WEEKLY\nEXDATE:20140611T230000Z,20140618T230000Z,20140723T230000Z,20140730T230000Z,20140813T230000Z,20140820T230000Z,20140917T230000Z,20140806T230000Z",
+    "created_at": "2014-06-03T23:49:04+0900",
+    "created_by": "abc@email.com",
+    "updated_at": "2014-07-16T15:05:26+0900",
+    "updated_by": "abc@email.com"
+},
+{
+    "id": "0p0GaPGxsJ",
+    "employee": {
+        "id": 178,
+        "name": "Steven Name"
+    },
+    "type": "personal",
+    "at": "2014-06-06T08:00:00+0900",
+    "to": "2014-06-06T17:00:00+0900",
+    "global_id": "rjLXbV9LynSqEXTF6FVRoz2X5D@fullslate.com",
+    "global_sequence": 8,
+    "recurs": true,
+    "recurrence": "DTSTART;TZID=Asia/Tokyo;VALUE=DATE-TIME:20140606T080000\nDTEND;TZID=Asia/Tokyo;VALUE=DATE-TIME:20140606T170000\n\nRRULE:FREQ=WEEKLY\nEXDATE:20140724T230000Z,20140731T230000Z,20140814T230000Z,20140821T230000Z,20140918T230000Z,20140925T230000Z",
+    "created_at": "2014-06-03T23:49:52+0900",
+    "created_by": "abc@email.com",
+    "updated_at": "2014-07-28T22:28:19+0900",
+    "updated_by": "abc@email.com"
+},
+{
+    "id": "MdX8nHymPj",
+    "employee": {
+        "id": 178,
+        "name": "Steven Name"
+    },
+    "type": "personal",
+    "at": "2014-06-10T08:00:00+0900",
+    "to": "2014-06-10T20:00:00+0900",
+    "global_id": "ICBanmkcPS3RTSw1NyYPf1OM4B@fullslate.com",
+    "global_sequence": 7,
+    "recurs": true,
+    "recurrence": "DTSTART;TZID=Asia/Tokyo;VALUE=DATE-TIME:20140610T080000\nDTEND;TZID=Asia/Tokyo;VALUE=DATE-TIME:20140610T200000\n\nRRULE:FREQ=WEEKLY\nEXDATE:20140721T230000Z,20140728T230000Z,20140811T230000Z,20140818T230000Z,20140922T230000Z",
+    "created_at": "2014-06-03T23:51:12+0900",
+    "created_by": "abc@email.com",
+    "updated_at": "2014-07-28T22:25:39+0900",
+    "updated_by": "abc@email.com"
+},
+{
+    "id": "mNaHj6IXEb",
+    "employee": {
+        "id": 178,
+        "name": "Steven Kilty"
+    },
+    "type": "appointment",
+    "at": "2014-07-16T13:00:00+0900",
+    "to": "2014-07-16T15:00:00+0900",
+    "global_id": "XwybnVqplwb8OLJUe1juZmEfF4@fullslate.com",
+    "global_sequence": 16,
+    "attendees": [
+        {
+            "id": 168,
+            "name": "Nota Name"
+        }
+    ],
+    "services": [
+        {
+            "id": 14,
+            "name": "High School Tutoring - 2hr"
+        },
+        {
+            "id": 125,
+            "name": "Transportation"
+        }
+    ],
+    "recurs": true,
+    "recurrence": "DTSTART;TZID=Asia/Tokyo;VALUE=DATE-TIME:20140716T130000\nDTEND;TZID=Asia/Tokyo;VALUE=DATE-TIME:20140716T150000\n\nRRULE:FREQ=WEEKLY\nEXDATE:20140318T040000Z,20140325T040000Z,20140401T040000Z,20140408T040000Z,20140415T040000Z,20140422T040000Z,20140428T040000Z,20140505T040000Z,20140512T040000Z,20140520T040000Z,20140527T040000Z,20140603T040000Z,20140610T040000Z,20140805T040000Z,20140716T040000Z,20140730T040000Z,20140806T040000Z,20140813T040000Z",
+    "created_at": "2014-06-15T21:22:44+0900",
+    "created_by": "abc@email.com",
+    "updated_at": "2014-08-20T18:33:35+0900",
+    "updated_by": "info@tokyoacademics.com"
+},
+{
+    "id": "fIbebflaSn",
+    "employee": {
+        "id": 149,
+        "name": "Hey Namely"
+    },
+    "type": "class",
+    "at": "2014-07-20T11:00:00+0900",
+    "to": "2014-07-20T13:00:00+0900",
+    "global_id": "dpb3sHSFdc0jKkPe1wJP9bZj9d@fullslate.com",
+    "global_sequence": 0,
+    "services": [
+        {
+            "id": 207,
+            "name": "SAT Reading & Writing - Foundation"
+        }
+    ],
+    "recurs": true,
+    "recurrence": "DTSTART;TZID=Asia/Tokyo;VALUE=DATE-TIME:20140720T110000\nDTEND;TZID=Asia/Tokyo;VALUE=DATE-TIME:20140720T130000\n\nRRULE:FREQ=WEEKLY;UNTIL=20140810T150000Z",
+    "end": "2014-08-11T00:00:00+0900",
+    "created_at": "2014-07-14T16:29:58+0900",
+    "created_by": "info@tokyoacademics.com",
+    "maximum_attendees": 10
+},
+{
+    "id": "kiaFfqysoe",
+    "employee": {
+        "id": 149,
+        "name": "Yasmine Karami"
+    },
+    "type": "appointment",
+    "at": "2014-04-01T10:00:00+0900",
+    "to": "2014-04-01T23:00:00+0900",
+    "global_id": "jLOvxBtubCGxtSZkUKwmIoHHlC@fullslate.com",
+    "global_sequence": 3,
+    "recurs": true,
+    "recurrence": "DTSTART;TZID=Asia/Tokyo;VALUE=DATE-TIME:20140401T100000\nDTEND;TZID=Asia/Tokyo;VALUE=DATE-TIME:20140401T230000\n\nRRULE:FREQ=WEEKLY",
+    "created_at": "2014-04-04T12:39:04+0900",
+    "created_by": "howdy@howdy.com",
+    "updated_at": "2014-04-11T23:47:29+0900",
+    "updated_by": "info@tokyoacademics.com"
+},
+{
+    "id": "Zsd1ZTzMAm",
+    "employee": {
+        "id": 231,
+        "name": "White Black"
+    },
+    "type": "appointment",
+    "at": "2014-07-21T15:30:00+0900",
+    "to": "2014-07-21T16:00:00+0900",
+    "global_id": "7qp5JJDCawNmdTnJH2QtXCz45G@fullslate.com",
+    "global_sequence": 1,
+    "attendees": [
+        {
+            "id": 101,
+            "name": "Mike Nestle"
+        }
+    ],
+    "services": [
+        {
+            "id": 148,
+            "name": "Vocab Check-15m"
+        }
+    ],
+    "created_at": "2014-07-21T16:35:21+0900",
+    "created_by": "info@tokyoacademics.com",
+    "updated_at": "2014-07-21T16:35:32+0900",
+    "updated_by": "info@tokyoacademics.com",
+    "provider_notes": "Session was successful."
+}
 ]

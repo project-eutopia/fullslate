@@ -3,6 +3,9 @@ require 'bundler/setup'
 require 'json'
 require 'pry'
 require 'httparty'
+require 'active_support'
+require 'ri_cal'
+require 'tzinfo'
 
 require 'webmock/rspec'
 WebMock.disable_net_connect!(allow_localhost: true)

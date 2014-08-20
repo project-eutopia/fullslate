@@ -1,4 +1,7 @@
 require 'httparty'
+require 'active_support'
+require 'ri_cal'
+require 'tzinfo'
 
 module Fullslate
   class << self
