@@ -32,9 +32,9 @@ module Fullslate
       @id = params["id"]
       @employee = params["employee"]
       @type = parse_type(params['type'])
-      @at = Time.parse(params['at'])
-      @to = Time.parse(params['to'])
-      @end = Time.parse(params['end'])
+      @at = Time.parse(params['at']) if params['at']
+      @to = Time.parse(params['to']) if params['to']
+      @end = Time.parse(params['end']) if params['end']
       @attendees = params['attendees']
       @services = params['services']
       @transactions = params['transactions']

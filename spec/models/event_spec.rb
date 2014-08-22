@@ -26,7 +26,6 @@ describe Fullslate::Api do
       end
 
       it 'should have correct type' do
-        binding.pry
         expect(event.type).to eq :class
       end
     end
