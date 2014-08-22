@@ -25,6 +25,10 @@ describe Fullslate::Api do
         e = event.occurrences(before: Time.new(2014, 8, 25))
       end
 
+      it 'should have correct type' do
+        binding.pry
+        expect(event.type).to eq :class
+      end
     end
   end
 end

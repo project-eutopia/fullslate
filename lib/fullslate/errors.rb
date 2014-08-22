@@ -3,4 +3,5 @@ module Fullslate
   class ServiceNotFound < StandardError; end
   class ClientNotFound < StandardError; end
   class EventNotFound < StandardError; end
+  class ParseError < StandardError; end
 end

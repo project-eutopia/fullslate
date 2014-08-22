@@ -5,9 +5,9 @@ module Fullslate
     attr_reader :id,
                 :employee,
                 :type,
-                :at,
-                :to,
-                :end,
+                :at,  # Time
+                :to,  # Time
+                :end, # Time
                 :attendees,
                 :services,
                 :transactions,
@@ -15,7 +15,7 @@ module Fullslate
                 :global_sequence,
                 :deleted,
                 :recur,
-                #:recurrence,
+                #:recurrence, # use method: occurrences
                 :tentative,
                 :buffer_before,
                 :buffer_after,
@@ -31,10 +31,10 @@ module Fullslate
     def initialize(params)
       @id = params["id"]
       @employee = params["employee"]
-      @type = params['type']
-      @at = params['at']
-      @to = params['to']
-      @end = params['end']
+      @type = parse_type(params['type'])
+      @at = Time.parse(params['at'])
+      @to = Time.parse(params['to'])
+      @end = Time.parse(params['end'])
       @attendees = params['attendees']
       @services = params['services']
       @transactions = params['transactions']
@@ -65,6 +65,14 @@ module Fullslate
     end
 
     private
+
+    def parse_type(type)
+      if ['appointment', 'external', 'personal', 'class'].include? type
+        type.to_sym
+      else
+        raise Fullslate::ParseError("Unknown type #{type} for event id #{id}")
+      end
+    end
 
     def parse_recurrence(str)
       return nil if str.nil?
