@@ -14,16 +14,16 @@ module Fullslate
         fullslate_objects(Fullslate::Employee, opts)
       end
 
-      def employee(id)
-        fullslate_object(id, Fullslate::Employee)
+      def employee(id, opts = {})
+        fullslate_object(id, Fullslate::Employee, opts)
       end
 
       def services(opts = {})
         fullslate_objects(Fullslate::Service, opts)
       end
 
-      def service(id)
-        fullslate_object(id, Fullslate::Service)
+      def service(id, opts = {})
+        fullslate_object(id, Fullslate::Service, opts)
       end
 
       def clients(opts = {})
@@ -35,16 +35,16 @@ module Fullslate
         fullslate_objects(Fullslate::Client, opts)
       end
 
-      def client(id)
-        fullslate_object(id, Fullslate::Client)
+      def client(id, opts = {})
+        fullslate_object(id, Fullslate::Client, opts)
       end
 
       def events(opts = {})
         fullslate_objects(Fullslate::Event, opts)
       end
 
-      def event(id)
-        fullslate_object(id, Fullslate::Event)
+      def event(id, opts = {})
+        fullslate_object(id, Fullslate::Event, opts)
       end
 
       private
@@ -73,6 +73,9 @@ module Fullslate
 
       def fullslate_object(id, object_class, opts = {})
         json = get("#{object_class::API_PATH}/#{id}", query: query_from_opts(opts))
+
+        return json if opts[:raw]
+
         object_class.new(json)
       end
 

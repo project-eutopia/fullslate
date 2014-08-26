@@ -40,6 +40,10 @@ module Fullslate
         raise Fullslate::ClientNotFound
       end
     end
+
+    def name
+      "#{first_name} #{last_name}"
+    end
   end
 
 end
