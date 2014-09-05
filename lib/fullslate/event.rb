@@ -60,7 +60,15 @@ module Fullslate
       end
     end
 
-    def occurrences(params)
+    def has_client(id)
+      return false if not @attendees
+      @attendees.each do |attendee|
+        return true if attendee['id'] == id
+      end
+      return false
+    end
+
+    def occurrences(params = {})
       @recurrence.occurrences(params)
     end
 
