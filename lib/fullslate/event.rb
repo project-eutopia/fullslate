@@ -15,7 +15,8 @@ module Fullslate
                 :global_sequence,
                 :deleted,
                 :recur,
-                #:recurrence, # use method: occurrences
+                :recurrence, # use method: occurrences
+                :recurrence_raw, # use method: occurrences
                 :tentative,
                 :buffer_before,
                 :buffer_after,
@@ -42,7 +43,8 @@ module Fullslate
       @global_sequence = params['global_sequence']
       @deleted = params['deleted']
       @recur = params['recur']
-      @recurrence = parse_recurrence(params['recurrence'])
+      @recurrence_raw = params['recurrence']
+      @recurrence = parse_recurrence(@recurrence_raw)
       @tentative = params['tentative']
       @buffer_before = params['buffer_before']
       @buffer_after = params['buffer_after']
