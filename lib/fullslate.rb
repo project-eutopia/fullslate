@@ -29,6 +29,10 @@ module Fullslate
       configuration.auth_key
     end
 
+    def verify_ssl?
+      !(configuration.verify_ssl == false)
+    end
+
     def api_uri
       "https://#{key}.fullslate.com/api"
     end

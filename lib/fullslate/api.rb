@@ -52,7 +52,7 @@ module Fullslate
       def fullslate_objects(object_class, opts = {})
         array = Array.new
 
-        res = get(object_class::API_PATH, query: query_from_opts(opts))
+        res = get(object_class::API_PATH, query: query_from_opts(opts), verify: Fullslate.verify_ssl?)
         return res if opts[:raw]
 
         res.each do |json|
@@ -72,7 +72,7 @@ module Fullslate
       end
 
       def fullslate_object(id, object_class, opts = {})
-        json = get("#{object_class::API_PATH}/#{id}", query: query_from_opts(opts))
+        json = get("#{object_class::API_PATH}/#{id}", query: query_from_opts(opts), verify: Fullslate.verify_ssl?)
 
         return json if opts[:raw]
 
